@@ -1,6 +1,6 @@
 const CONFIG = require('./config.json');
 const tmi = require('tmi.js');
-const channels = ['forsen'];
+var channels = process.argv[2].split(',');
 const opts = {
     identity: {
         username: CONFIG.user,
@@ -8,13 +8,11 @@ const opts = {
     },
     channels: channels
 };
-
 const client = new tmi.client(opts);
 
 client.on('chat', onMessageHandler);
 client.on('connected', onConnectedHandler);
-// client.on('join', onJoinHandler);
-
+client.on('join', onJoinHandler);
 client.connect();
 
 function onConnectedHandler(addr, port) {
@@ -25,11 +23,11 @@ function onMessageHandler(channel, user, message, self) {
     if (self) { return; }
 
     const msg = message.trim();
-    console.log(`${user.username}: ${msg}`);
+    console.log(`@${channel} ${user.username}: ${msg}`);
 }
 
 function onJoinHandler(channel, username, self) {
-    if (self) { return; }
-
-    console.log(`* ${username} joined ${channel}`);
+    if (self) {
+        console.log(`* ${username} joined ${channel}`);
+    }
 }
