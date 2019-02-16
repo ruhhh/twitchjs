@@ -1,0 +1,20 @@
+{ 
+    badges: { moderator: '1', subscriber: '0', 'bits-leader': '3' },
+    color: '#2E8B57',
+    'display-name': 'Ruhfzy',
+    'emote-only': true,
+    emotes: { '1905243': [ '0-10' ] },
+    flags: null,
+    id: '64c967e5-94d7-44d7-b1e8-62deb6f643ea',
+    mod: true,
+    'room-id': '106857428',
+    subscriber: true,
+    'tmi-sent-ts': '1550329278084',
+    turbo: false,
+    'user-id': '52727763',
+    'user-type': 'mod',
+    'emotes-raw': '1905243:0-10',
+    'badges-raw': 'moderator/1,subscriber/0,bits-leader/3',
+    username: 'ruhfzy',
+    'message-type': 'chat' 
+}
